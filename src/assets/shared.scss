@@ -1,0 +1,70 @@
+.header-form-section {
+  display: flex;
+  margin-bottom: 5px;
+  min-width: 600px;
+
+  .section-label {
+    padding-top: 5px;
+    font-weight: bold;
+    width: 80px;
+    display: block;
+  }
+
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 650px;
+    flex-grow: 1;
+  }
+
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+}
+
+.header-form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+@mixin set-with-separator($separator) {
+  .element {
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      width: 5px;
+      height: 5px;
+      font-size: 14px;
+      content: $separator;
+    }
+  }
+}
+
+.set-with-comma {
+  @include set-with-separator(', ');
+
+  .element {
+    &::after {
+      padding-right: 5px;
+    }
+  }
+}
+
+.set-with-slash {
+  @include set-with-separator(' / ');
+}
+
+.hide {
+  display: none !important;
+}
+
+.text-break {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+}

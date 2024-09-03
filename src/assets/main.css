@@ -1,0 +1,12 @@
+body {
+  min-height: 100vh;
+}
+
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+
+.ant-modal-body {
+  margin-top: 16px;
+}
